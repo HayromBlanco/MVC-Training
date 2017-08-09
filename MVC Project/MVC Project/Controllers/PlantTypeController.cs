@@ -17,5 +17,15 @@ namespace MVC_Project.Controllers
 
         [HttpGet]
 
+        public JsonResult GetAllPlantTypes()
+        {
+            return Json(PlantData.PlantTypeList, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public JsonResult GetTypePlantById(int plantTypeId)
+        {
+            return Json(PlantData.PlantTypeList.Where(P => P.Id == plantTypeId).FirstOrDefault(), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
