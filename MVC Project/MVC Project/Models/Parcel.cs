@@ -7,5 +7,11 @@ namespace MVC_Project.Models
 {
     public class Parcel
     {
+        public int Id { get; set; }
+        public double Size { get; set; }
+        public string Description { get; set; }
+        public int IdFarm { get; set; }
+        public List<int> ConditionIds { get; set; }
+        public List<Observation> Observations { get; set; }
     }
 }

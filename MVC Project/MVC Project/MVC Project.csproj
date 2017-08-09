@@ -182,9 +182,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Condition.cs" />
     <Compile Include="Models\Farm.cs" />
+    <Compile Include="Models\Observation.cs" />
     <Compile Include="Models\Parcel.cs" />
     <Compile Include="Models\Plant.cs" />
+    <Compile Include="Models\PlantType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
