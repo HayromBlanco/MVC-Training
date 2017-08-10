@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MVC_Project.Data;
+using MVC_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
+using System.Web.Mvc;
 
 namespace MVC_Project.Controllers
 {
@@ -55,18 +57,21 @@ namespace MVC_Project.Controllers
             {
                 if (!string.IsNullOrEmpty(ObjFarm.Name) && !string.IsNullOrEmpty(ObjFarm.Description))
                 {
-                    //farm.ParcelIds = new List<int>();
-                    var LastFarm = FarmData.FarmList.Last();
 
-                    if (farm.Id = 0)
+                    var LastFarm = FarmData.FarmList.LastOrDefault();
+                    if (LastFarm == null)
                     {
-                        var FirstFarm = FarmData.FarmList.FirstOrDefault();
-                        farm.Id = FirstFarm + 1;
+                        ObjFarm.Id = 1;
+                        FarmData.FarmList.Add(ObjFarm);
+                        return Json(ObjFarm, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        ObjFarm.Id = LastFarm.Id + 1;
+                        FarmData.FarmList.Add(ObjFarm);
+                        return Json(ObjFarm, JsonRequestBehavior.AllowGet);
                     }
 
-                    ObjFarm.Id = LastFarm.Id + 1;
-                    FarmData.FarmList.Add(ObjFarm);
-                    return Json(ObjFarm, JsonRequestBehavior.AllowGet);
                 }
                 return Json(false, JsonRequestBehavior.AllowGet);
             }
@@ -84,9 +89,27 @@ namespace MVC_Project.Controllers
                 if (farmId != null)
                 {
                     var Farm = FarmData.FarmList.Where(f => f.Id == farmId).FirstOrDefault();
+
+                    var AllParcels = ParcelData.ParcelList.Where(Ap => Ap.IdFarm == farmId).ToList();
+
+                    foreach (var Parcels in AllParcels)
+                    {
+                        var ParcelId = Parcels.Id;
+
+                        var PlantList = PlantData.PlantList.Where(P => P.IdParcel == ParcelId).ToList();
+
+                        foreach (var Plants in PlantList)
+                        {
+                            PlantData.PlantList.Remove(Plants);
+                        }
+
+                        ParcelData.ParcelList.Remove(Parcels);
+                    }
+
                     FarmData.FarmList.Remove(Farm);
-                    //return Json(true, JsonRequestBehavior.AllowGet);
+                    return Json(true, JsonRequestBehavior.AllowGet);
                 }
+                return Json(false, JsonRequestBehavior.AllowGet);
             }
             catch (Exception Ex)
             {
@@ -96,7 +119,7 @@ namespace MVC_Project.Controllers
 
         [HttpGet]
         //Check the name of the method
-        public JsonResult GetFarm(int? farmId)
+        public JsonResult getFarm(int? farmId)
         {
             try
             {
@@ -105,7 +128,7 @@ namespace MVC_Project.Controllers
                     var Farm = FarmData.FarmList.Where(s => s.Id == farmId).FirstOrDefault();
                     return Json(Farm, JsonRequestBehavior.AllowGet);
                 }
-                //return Json(false, JsonRequestBehavior.AllowGet);
+                return Json(false, JsonRequestBehavior.AllowGet);
             }
             catch (Exception Ex)
             {

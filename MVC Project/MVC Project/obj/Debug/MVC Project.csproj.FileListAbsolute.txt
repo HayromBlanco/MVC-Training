@@ -1,0 +1,73 @@
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\obj\Debug\MVC Project.csprojResolveAssemblyReference.cache
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\ApplicationInsights.config
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\csc.exe
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\csc.exe.config
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\csc.rsp
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\csi.exe
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\csi.rsp
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\System.AppContext.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\vbc.exe
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\vbc.exe.config
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\vbc.rsp
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\VBCSCompiler.exe
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\MVC Project.dll.config
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\MVC Project.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\MVC Project.pdb
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Antlr3.Runtime.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.Web.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.ApplicationInsights.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Newtonsoft.Json.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Net.Http.Formatting.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Helpers.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Http.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Http.WebHost.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Mvc.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Optimization.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Razor.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.WebPages.Deployment.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.WebPages.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.WebPages.Razor.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\WebGrease.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Newtonsoft.Json.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Net.Http.Formatting.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Helpers.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Http.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Http.WebHost.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Mvc.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Optimization.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.Razor.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.WebPages.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.WebPages.Deployment.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\System.Web.WebPages.Razor.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Antlr3.Runtime.pdb
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.ApplicationInsights.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\bin\Microsoft.AI.Web.xml
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\obj\Debug\MVC Project.dll
+C:\Users\DEV02\Desktop\MVC\MVC Project\MVC Project\obj\Debug\MVC Project.pdb

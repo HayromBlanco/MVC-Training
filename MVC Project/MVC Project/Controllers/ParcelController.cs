@@ -71,11 +71,20 @@ namespace MVC_Project.Controllers
             {
                 if (!string.IsNullOrEmpty(ObjParcel.Description) && !string.IsNullOrEmpty(ObjParcel.Size.ToString()) && ObjParcel.Observations.Count > 0)
                 {
-                    
-                    var LastId = ParcelData.ParcelList.Last();
-                    ObjParcel.Id = LastId.Id + 1;
-                    ParcelData.ParcelList.Add(ObjParcel);
-                    return Json(ObjParcel, JsonRequestBehavior.AllowGet);
+
+                    var LastId = ParcelData.ParcelList.LastOrDefault();
+                    if (LastId == null)
+                    {
+                        ObjParcel.Id = 1;
+                        ParcelData.ParcelList.Add(ObjParcel);
+                        return Json(ObjParcel, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        ObjParcel.Id = LastId.Id + 1;
+                        ParcelData.ParcelList.Add(ObjParcel);
+                        return Json(ObjParcel, JsonRequestBehavior.AllowGet);
+                    }
                 }
                 return Json(false, JsonRequestBehavior.AllowGet);
             }
@@ -116,6 +125,12 @@ namespace MVC_Project.Controllers
                 if (parcelId != null)
                 {
                     var DeleteParcel = ParcelData.ParcelList.Where(P => P.Id == parcelId).FirstOrDefault();
+                    var ObtainPlants = PlantData.PlantList.Where(Op => Op.IdParcel == parcelId).ToList();
+                    foreach (var Plants in ObtainPlants)
+                    {
+                        PlantData.PlantList.Remove(Plants);
+                    }
+
                     ParcelData.ParcelList.Remove(DeleteParcel);
                     return Json(true, JsonRequestBehavior.AllowGet);
                 }
