@@ -7,33 +7,130 @@ using System.Web.Http;
 
 namespace MVC_Project.Controllers
 {
-    public class ParcelController : ApiController
+    public class ParcelController : Controller
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        // GET: Parcel
+        public ActionResult Index()
         {
-            return new string[] { "value1", "value2" };
+            return View();
+        }
+        public ActionResult Edit()
+        {
+            return View();
+        }
+        public ActionResult Create()
+        {
+            return View();
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        [HttpGet]
+        public JsonResult GetParcel(int? parcelId)
         {
-        }
+            try
+            {
+                if (parcelId != null)
+                {
+                    var GetParcel = ParcelData.ParcelList.Where(P => P.Id == parcelId).FirstOrDefault();
+                    return Json(GetParcel, JsonRequestBehavior.AllowGet);
+                }
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception Ex)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }//End Get Parcel
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        [HttpGet]
+        public JsonResult GetAllParcelByFarmId(int? farmId)
         {
-        }
-    }
+            try
+            {
+                if (farmId != null)
+                {
+                    var GetParcel = ParcelData.ParcelList.Where(P => P.IdFarm == farmId);
+                    return Json(GetParcel, JsonRequestBehavior.AllowGet);
+                }
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception Ex)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }//End  GetAllParcelByFarmId
+
+
+        [HttpPost]
+        public JsonResult AddParcel([Bind(Include = "Size,Description,IdFarm,Observations,ConditionIds")] Parcel ObjParcel)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(ObjParcel.Description) && !string.IsNullOrEmpty(ObjParcel.Size.ToString()) && ObjParcel.Observations.Count > 0)
+                {
+                    ObjParcel.PlantIds = new List<int>();
+                    var LastId = ParcelData.ParcelList.Last();
+                    var FirstId = ParcelData.ParcelList.FirstOrDefault();
+                    if (ObjParcel.Id = 0)
+                    {
+                        ObjParcel.Id = FirstId + 1;
+                    }
+                    ObjParcel.Id = LastId.Id + 1;
+                    ParcelData.ParcelList.Add(ObjParcel);
+                    return Json(parcel, JsonRequestBehavior.AllowGet);
+                }
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+
+            catch (Exception Ex)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }//End of AddParcel
+
+        [HttpPut]
+        public JsonResult UpdateParcel([Bind(Include = "Id,Size,Description,IdFarm,Observations,ConditionIds")] Parcel ObjParcel)
+        {
+            try
+            {
+                if (ObjParcel.Observations.Count > 0 && !string.IsNullOrEmpty(ObjParcel.Size.ToString()) && !string.IsNullOrEmpty(ObjParcel.Description))
+                {
+                    var UpdateParcel = ParcelData.ParcelList.Where(P => P.Id == ObjParcel.Id).FirstOrDefault();
+                    UpdateParcel.Size = ObjParcel.Size;
+                    UpdateParcel.Description = ObjParcel.Description;
+                    UpdateParcel.Observations = ObjParcel.Observations;
+                    UpdateParcel.ConditionIds = ObjParcel.ConditionIds;
+                    return Json(foundParcel, JsonRequestBehavior.AllowGet);
+                }
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception Ex)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }//End UpdateParcel
+
+        [HttpDelete]
+        public JsonResult RemoveParcel(int? parcelId)
+        {
+            try
+            {
+                if (parcelId != null)
+                {
+                    var DeleteParcel = ParcelData.ParcelList.Where(P => P.Id == parcelId).FirstOrDefault();
+                    ParcelData.ParcelList.Remove(DeleteParcel);
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }//End RemoveParcel
+
+
+
+    }//End ParcelController
 }
