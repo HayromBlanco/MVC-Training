@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MVC_Project.Data;
+using MVC_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
+using System.Web.Mvc;
 
 namespace MVC_Project.Controllers
 {
@@ -69,16 +71,11 @@ namespace MVC_Project.Controllers
             {
                 if (!string.IsNullOrEmpty(ObjParcel.Description) && !string.IsNullOrEmpty(ObjParcel.Size.ToString()) && ObjParcel.Observations.Count > 0)
                 {
-                    ObjParcel.PlantIds = new List<int>();
+                    
                     var LastId = ParcelData.ParcelList.Last();
-                    var FirstId = ParcelData.ParcelList.FirstOrDefault();
-                    if (ObjParcel.Id = 0)
-                    {
-                        ObjParcel.Id = FirstId + 1;
-                    }
                     ObjParcel.Id = LastId.Id + 1;
                     ParcelData.ParcelList.Add(ObjParcel);
-                    return Json(parcel, JsonRequestBehavior.AllowGet);
+                    return Json(ObjParcel, JsonRequestBehavior.AllowGet);
                 }
                 return Json(false, JsonRequestBehavior.AllowGet);
             }
@@ -101,7 +98,7 @@ namespace MVC_Project.Controllers
                     UpdateParcel.Description = ObjParcel.Description;
                     UpdateParcel.Observations = ObjParcel.Observations;
                     UpdateParcel.ConditionIds = ObjParcel.ConditionIds;
-                    return Json(foundParcel, JsonRequestBehavior.AllowGet);
+                    return Json(UpdateParcel, JsonRequestBehavior.AllowGet);
                 }
                 return Json(false, JsonRequestBehavior.AllowGet);
             }

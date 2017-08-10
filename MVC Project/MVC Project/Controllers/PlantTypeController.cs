@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC_Project.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,13 +20,34 @@ namespace MVC_Project.Controllers
 
         public JsonResult GetAllPlantTypes()
         {
-            return Json(PlantData.PlantTypeList, JsonRequestBehavior.AllowGet);
-        }
+            try
+            {
+                return Json(PlantData.PlantTypeList, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception Ex)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+
+        }//End GetAllPlantTypes
+
         [HttpGet]
-        public JsonResult GetTypePlantById(int plantTypeId)
+        public JsonResult GetTypePlantById(int? plantTypeId)
         {
-            return Json(PlantData.PlantTypeList.Where(P => P.Id == plantTypeId).FirstOrDefault(), JsonRequestBehavior.AllowGet);
-        }
+            try
+            {
+                if (plantTypeId != null)
+                {
+                    var GetPlantType = PlantData.PlantTypeList.Where(P => P.Id == plantTypeId).FirstOrDefault();
+                    return Json(GetPlantType, JsonRequestBehavior.AllowGet);
+                }
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception Ex)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }//End GetTypePlantById
 
     }
 }
